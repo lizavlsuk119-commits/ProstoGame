@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prosto Games — Простір твоїх розваг</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  
+    <div class="top-bar">
+        <div>
+            <span>Валюта: UAH (₴)</span>
+            <span>Мова: UA</span>
+        </div>
+        <div>
+            <a href="#cabinet">Особистий кабінет</a>
+            <a href="#wishlist">Список бажань (0)</a>
+        </div>
+    </div>
+
+   
+    <header>
+        <div class="logo-box">
+            <svg viewBox="0 0 100 100">
+                <path d="M 20,20 L 80,20 L 80,60 C 80,75 50,90 50,90 C 50,90 20,75 20,60 Z" fill="none" stroke="#ffffff" stroke-width="6"/>
+                <path d="M 35,45 L 45,35 M 40,30 L 40,50" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+                <circle cx="60" cy="38" r="3" fill="#ffffff"/>
+                <circle cx="68" cy="46" r="3" fill="#ffffff"/>
+                <path d="M 25,65 Q 50,40 75,25" fill="none" stroke="#ffffff" stroke-width="4"/>
+                <path d="M 70,20 L 80,20 L 78,30 Z" fill="#ffffff"/>
+                <polygon points="80,15 83,23 91,23 84,28 87,36 80,31 73,36 76,28 69,23 77,23" fill="#ffffff"/>
+            </svg>
+            <div class="logo-text">
+                PROSTO
+                <span>GAMES</span>
+            </div>
+        </div>
+
+        <form class="search-box" action="#catalog" method="get">
+            <select name="genre">
+                <option value="all">Усі жанри</option>
+                <option value="action">Екшн / Action</option>
+                <option value="rpg">RPG / Рольові</option>
+                <option value="racing">Гонки / Racing</option>
+            </select>
+            <input type="text" name="query" placeholder="Шукати гру (Cyberpunk, GTA)...">
+            <button type="submit">Шукати</button>
+        </form>
+
+        <a href="#cart" class="cart-btn">
+            🛒 Мій кошик <span>0</span>
+        </a>
+    </header>
+
+   
+    <nav>
+        <ul>
+            <li><a href="#" class="active">Головна</a></li>
+            <li><a href="#catalog">PC (Steam)</a></li>
+            <li><a href="#catalog">PlayStation 5</a></li>
+            <li><a href="#catalog">Xbox Series X</a></li>
+            <li><a href="#catalog">Новинки</a></li>
+            <li><a href="#catalog">Знижки</a></li>
+        </ul>
+    </nav>
+
+   
+    <div class="hero-banner">
+        <div class="hero-text">
+            <h1>S.T.A.L.K.E.R. 2: Серце Чорнобиля</h1>
+            <p>Отримай ліцензійний ключ миттєво після покупки.</p>
+            <a href="#buy" class="btn-primary">Придбати за 1 599 грн</a>
+        </div>
+    </div>
+
+  
+    <div class="main-container">
+
+       
+        <aside class="sidebar">
+            <h3>Платформи</h3>
+            <ul>
+                <li><a href="#catalog">Усі платформи</a></li>
+                <li><a href="#catalog">PC Games</a></li>
+                <li><a href="#catalog">PlayStation 5</a></li>
+                <li><a href="#catalog">Xbox Series</a></li>
+            </ul>
+
+            <h3>Жанри</h3>
+            <ul>
+                <li><a href="#catalog">Екшн та Шутери</a></li>
+                <li><a href="#catalog">RPG та Пригоди</a></li>
+                <li><a href="#catalog">Гонки</a></li>
+            </ul>
+        </aside>
+
+      
+        <main id="catalog">
+            <div class="catalog-header">
+                <h2>Каталог ігор</h2>
+                <span>Знайдено: 8 ігор</span>
+            </div>
+
+            <div class="catalog-grid">
+
+                <div class="game-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Cyberpunk_2077_box_art.jpg" alt="Cyberpunk 2077">
+                    <div class="game-details">
+                        <span class="game-tag">PC / Steam</span>
+                        <div class="game-title">Cyberpunk 2077</div>
+                        <div class="game-price">
+                            <span class="price-new">899 грн</span>
+                            <span class="price-old">1 199 грн</span>
+                        </div>
+                        <a href="#buy" class="btn-buy">Купити ключ</a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbQ-blHSqqdgk-6a_RVVbZ7zhJXh80TZ67nK78rPMdDA&s=10" alt="GTA V">
+                    <div class="game-details">
+                        <span class="game-tag">PC / Steam</span>
+                        <div class="game-title">Grand Theft Auto V</div>
+                        <div class="game-price">
+                            <span class="price-new">699 грн</span>
+                            <span class="price-old">999 грн</span>
+                        </div>
+                        <a href="#buy" class="btn-buy">Купити ключ</a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxeKjCHd1xNXw8J-5ZdHzvOSv1rDUFFpWDK1bNTf6Eaw&s=10" alt="God of War Ragnarok">
+                    <div class="game-details">
+                        <span class="game-tag">PS5</span>
+                        <div class="game-title">God of War Ragnarök</div>
+                        <div class="game-price">
+                            <span class="price-new">1 999 грн</span>
+                        </div>
+                        <a href="#buy" class="btn-buy">Купити диск</a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/ru/5/5c/S.T.A.L.K.E.R._2_Logo.png?utm_source=ru.wikipedia.org&utm_campaign=index&utm_content=original" alt="STALKER 2">
+                    <div class="game-details">
+                        <span class="game-tag">PC / Steam</span>
+                        <div class="game-title">S.T.A.L.K.E.R. 2</div>
+                        <div class="game-price">
+                            <span class="price-new">1 599 грн</span>
+                            <span class="price-old">1 899 грн</span>
+                        </div>
+                        <a href="#buy" class="btn-buy">Купити ключ</a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/b/b9/Elden_Ring_Box_art.jpg" alt="Elden Ring">
+                    <div class="game-details">
+                        <span class="game-tag">PC / Steam</span>
+                        <div class="game-title">Elden Ring</div>
+                        <div class="game-price">
+                            <span class="price-new">1 299 грн</span>
+                            <span class="price-old">1 599 грн</span>
+                        </div>
+                        <a href="#buy" class="btn-buy">Купити ключ</a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="https://store-images.s-microsoft.com/image/apps.28758.13734397844529069.202e3fc9-37d6-4853-a58b-fabe504b71e8.4335e940-f927-4be4-af08-8e689a17bd7a" alt="Forza Horizon 5">
+                    <div class="game-details">
+                        <span class="game-tag">Xbox Series</span>
+                        <div class="game-title">Forza Horizon 5</div>
+                        <div class="game-price">
+                            <span class="price-new">1 199 грн</span>
+                            <span class="price-old">1 499 грн</span>
+                        </div>
+                        <a href="#buy" class="btn-buy">Купити ключ</a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Witcher_3_cover_art.jpg" alt="The Witcher 3">
+                    <div class="game-details">
+                        <span class="game-tag">PC / Steam</span>
+                        <div class="game-title">The Witcher 3: Wild Hunt</div>
+                        <div class="game-price">
+                            <span class="price-new">499 грн</span>
+                            <span class="price-old">799 грн</span>
+                        </div>
+                        <a href="#buy" class="btn-buy">Купити ключ</a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/4/44/Red_Dead_Redemption_II.jpg" alt="Red Dead Redemption 2">
+                    <div class="game-details">
+                        <span class="game-tag">PC / Steam</span>
+                        <div class="game-title">Red Dead Redemption 2</div>
+                        <div class="game-price">
+                            <span class="price-new">899 грн</span>
+                            <span class="price-old">1 299 грн</span>
+                        </div>
+                        <a href="#buy" class="btn-buy">Купити ключ</a>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+   
+    <footer>
+        <div class="footer-cols">
+            <div>
+                <h4>Prosto Games</h4>
+                <p>Просто обрати. Просто грати.</p>
+            </div>
+            <div>
+                <h4>Покупцям</h4>
+                <p>Як активувати ключ</p>
+                <p>Гарантія та повернення</p>
+            </div>
+            <div>
+                <h4>Підтримка</h4>
+                <p>Email: prosto2026@gmail.com</p>
+                <p>Режим роботи: 24/7</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Prosto Games. Усі права захищені.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
