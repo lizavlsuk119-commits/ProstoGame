@@ -3,197 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prosto Games - простір твоїх розваг.</title>
+    <title>Prosto Games — Простір твоїх розваг</title>
+    <meta name="description" content="Prosto Games — магазин ігор для PC, PlayStation 5 та Xbox. Ліцензійні ключі, миттєва доставка, знижки та список бажань.">
+    <meta name="theme-color" content="#121318">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23121318'/%3E%3Cpath d='M14 14h36v24c0 9-18 14-18 14S14 47 14 38z' fill='none' stroke='%234f46e5' stroke-width='4'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- ================= TOP BAR ================= -->
     <div class="top-bar">
-        <!-- КОМЕНТАР: Перемикач мови та валюти -->
-        <div class="top-left">
+        <div>
             <span>Валюта: UAH (₴)</span>
             <span>Мова: UA</span>
         </div>
-        <div class="top-right">
-            <!-- КОМЕНТАР: Особистий кабінет і список бажаних ігор -->
-            <a href="#">Особистий кабінет</a>
-            <a href="#">Список бажань (0)</a>
+        <div>
+            <a href="#cabinet" id="cabinetLink">Особистий кабінет</a>
+            <a href="#wishlist" id="wishlistLink">
+                Список бажань (<span id="wishlistCount">0</span>)
+            </a>
         </div>
     </div>
 
-    <!-- ================= HEADER (ШАПКА) ================= -->
-    <header class="header-main">
-        <!-- КОМЕНТАР: Сюди вставимо твій логотип, коли скинеш фото -->
-        <div class="header-logo">
-            <a href="#">
-                <img src="blob:https://convert.best/4d3f882b-6d37-44a8-bbe2-c50464c53204" alt="Prosto Games - Магазин ігор">
-            </a>
-        </div>
+    <header>
+        <a class="logo-box" href="#" aria-label="Prosto Games — на головну">
+            <img class="logo-img" src="assets/logo.png" alt="" width="477" height="512">
+        </a>
 
-        <!-- КОМЕНТАР: Пошукова стрічка ігор за жанром чи платформою -->
-        <div class="header-search">
-            <select>
-                <option value="0">Усі жанри</option>
-                <option value="1">Екшн / Action</option>
-                <option value="2">RPG / Рольові</option>
-                <option value="3">Стратегії</option>
-                <option value="4">Гонки / Racing</option>
+        <form class="search-box" id="searchForm" role="search">
+            <label class="visually-hidden" for="genreSelect">Жанр</label>
+            <select name="genre" id="genreSelect">
+                <option value="all">Усі жанри</option>
+                <option value="action">Екшн / Action</option>
+                <option value="rpg">RPG / Рольові</option>
+                <option value="racing">Гонки / Racing</option>
             </select>
-            <input type="text" placeholder="Шукати гру (наприклад, Cyberpunk, GTA)...">
+            <label class="visually-hidden" for="searchInput">Пошук гри</label>
+            <input type="text" name="query" id="searchInput" placeholder="Шукати гру (Cyberpunk, GTA)..." autocomplete="off">
             <button type="submit">Шукати</button>
-        </div>
+        </form>
 
-        <!-- КОМЕНТАР: Кошик замовлень -->
-        <div class="header-cart">
-            <a href="#">
-                <!-- КОМЕНТАР: Картинка / іконка кошика -->
-                <img src="images/cart-icon.png" alt="Кошик">
-                <span class="cart-title">Мій кошик</span>
-                <span class="cart-count">1 гра — 1 200 грн</span>
-            </a>
-        </div>
+        <button type="button" class="cart-btn" id="cartBtn" aria-controls="cartDrawer" aria-expanded="false">
+            🛒 Мій кошик <span id="cartCount">0</span>
+        </button>
     </header>
 
-    <!-- ================= NAV (ГОЛОВНЕ МЕНЮ) ================= -->
-    <nav class="main-navigation">
+    <nav aria-label="Основна навігація">
         <ul>
-            <li><a href="#">Головна</a></li>
-            <li><a href="#">Каталог ігор</a></li>
-            <li><a href="#">Новинки</a></li>
-            <li><a href="#">Знижки та акції</a></li>
-            <li><a href="#">Передзамовлення</a></li>
-            <li><a href="#">Контакти</a></li>
+            <li><a href="#" class="active" data-nav="all">Головна</a></li>
+            <li><a href="#catalog" data-nav="new">Новинки</a></li>
+            <li><a href="#catalog" data-nav="deals">Знижки</a></li>
+            <li><a href="info.html">Допомога</a></li>
         </ul>
     </nav>
 
-    <!-- ================= MAIN CONTENT AREA ================= -->
-    <div class="container-layout">
-        
-        <!-- ЛІВИЙ САЙДБАР (Категорії та предзамовлення) -->
-        <aside class="sidebar-left">
-            
-            <!-- КОМЕНТАР: Меню жанрів та платформ (Вертикальне меню) -->
-            <div class="categories-menu">
-                <h3><img src="images/menu-icon.png" alt=""> Жанри та Платформи</h3>
-                <ul>
-                    <li><a href="#">PC (Steam / Epic)</a></li>
-                    <li><a href="#">PlayStation 5 / PS4</a></li>
-                    <li><a href="#">Xbox Series X / One</a></li>
-                    <li><a href="#">Nintendo Switch</a></li>
-                    <li><a href="#">Екшн та Шутери</a></li>
-                    <li><a href="#">RPG та Пригоди</a></li>
-                    <li><a href="#">Стратегії та Симулятори</a></li>
-                    <li><a href="#">Спортивні та Гонки</a></li>
-                </ul>
-            </div>
+    <section class="hero-banner">
+        <div class="hero-text">
+            <h1>S.T.A.L.K.E.R. 2: Серце Чорнобиля</h1>
+            <p>Отримай ліцензійний ключ миттєво після покупки.</p>
+            <button type="button" class="btn-primary" id="heroBuy">Придбати за 1 599 грн</button>
+        </div>
+    </section>
 
-            <!-- КОМЕНТАР: Банер очікуваної гри у сайдбарі -->
-            <div class="sidebar-banner">
-                <a href="#">
-                    <!-- КОМЕНТАР: Обкладинка / постера анонсованої гри -->
-                    <img src="images/preorder-banner.jpg" alt="Передзамовлення нової гри">
-                </a>
-            </div>
+    <div class="main-container">
 
+        <aside class="sidebar">
+            <h2>Платформи</h2>
+            <ul>
+                <li><a href="#catalog" data-platform="all">Усі платформи</a></li>
+                <li><a href="#catalog" data-platform="pc">PC Games</a></li>
+                <li><a href="#catalog" data-platform="ps5">PlayStation 5</a></li>
+                <li><a href="#catalog" data-platform="xbox">Xbox Series</a></li>
+            </ul>
+
+            <h2>Жанри</h2>
+            <ul>
+                <li><a href="#catalog" data-genre="all">Усі жанри</a></li>
+                <li><a href="#catalog" data-genre="action">Екшн</a></li>
+                <li><a href="#catalog" data-genre="rpg">RPG</a></li>
+                <li><a href="#catalog" data-genre="racing">Гонки</a></li>
+            </ul>
+
+            <div class="sidebar-note">
+                <strong>Потрібна допомога?</strong>
+                <p>Підтримка 24/7: prosto2026@gmail.com</p>
+            </div>
         </aside>
 
-        <!-- ЦЕНТРАЛЬНА ЧАСТИНА СТОРІНКИ -->
-        <main class="content-center">
-
-            <!-- КОМЕНТАР: Слайдер з топ-новинками або релізами року -->
-            <section class="hero-slider">
-                <div class="slide-item">
-                    <!-- КОМЕНТАР: Баннер головного релізу -->
-                    <img src="images/game-slide-main.jpg" alt="Главний реліз сезону">
-                    <div class="slide-caption">
-                        <h2>Головний реліз року!</h2>
-                        <p>Купуй цифровий ключ зі знижкою 20% в день виходу.</p>
-                        <a href="#">Купити ключ</a>
-                    </div>
+        <main id="catalog">
+            <div class="catalog-header">
+                <div>
+                    <h2 id="catalogTitle">Каталог ігор</h2>
+                    <span id="resultCount" aria-live="polite">Знайдено: 16 ігор</span>
                 </div>
-            </section>
 
-            <!-- КОМЕНТАР: Секція товарів (Картки ігор) -->
-            <section class="products-section">
-                <h2>Топ продажів ігор</h2>
-
-                <div class="products-grid">
-
-                    <!-- Картка гри 1 -->
-                    <div class="product-card">
-                        <span class="badge-discount">-25%</span>
-                        
-                        <!-- КОМЕНТАР: Обкладинка першої гри -->
-                        <div class="product-image">
-                            <a href="#">
-                                <img src="images/game-cover-1.jpg" alt="Обкладинка гри 1">
-                            </a>
-                        </div>
-
-                        <div class="product-info">
-                            <span class="category">PC / Steam</span>
-                            <h4 class="product-name"><a href="#">Назва Відеогри 1</a></h4>
-                            <div class="price">
-                                <span class="new-price">899 грн</span>
-                                <span class="old-price">1 200 грн</span>
-                            </div>
-                            <button class="btn-add-cart">Придбати ключ</button>
-                        </div>
+                <div class="catalog-tools">
+                    <div class="view-toggle" role="group" aria-label="Вигляд каталогу">
+                        <button type="button" class="view-btn is-active" data-layout="grid" aria-pressed="true">▦ Сітка</button>
+                        <button type="button" class="view-btn" data-layout="slider" aria-pressed="false">▤ Слайдер</button>
                     </div>
-
-                    <!-- Картка гри 2 -->
-                    <div class="product-card">
-                        <!-- КОМЕНТАР: Обкладинка другої гри -->
-                        <div class="product-image">
-                            <a href="#">
-                                <img src="images/game-cover-2.jpg" alt="Обкладинка гри 2">
-                            </a>
-                        </div>
-
-                        <div class="product-info">
-                            <span class="category">PlayStation 5</span>
-                            <h4 class="product-name"><a href="#">Назва Відеогри 2</a></h4>
-                            <div class="price">
-                                <span class="new-price">1 999 грн</span>
-                            </div>
-                            <button class="btn-add-cart">Придбати диск</button>
-                        </div>
-                    </div>
-
+                    <label class="visually-hidden" for="sortSelect">Сортування</label>
+                    <select id="sortSelect">
+                        <option value="popular">За популярністю</option>
+                        <option value="price-asc">Спочатку дешевші</option>
+                        <option value="price-desc">Спочатку дорожчі</option>
+                        <option value="name">За назвою</option>
+                    </select>
+                    <button type="button" class="btn-reset" id="resetFilters" hidden>Скинути</button>
                 </div>
-            </section>
+            </div>
 
+            <div class="catalog-grid" id="catalogGrid"></div>
+
+            <div class="slider-controls" id="sliderControls" hidden>
+                <button type="button" class="slider-arrow" id="slidePrev" aria-label="Попередні ігри">‹</button>
+                <div class="slider-dots" id="sliderDots" role="group" aria-label="Навігація слайдера"></div>
+                <button type="button" class="slider-arrow" id="slideNext" aria-label="Наступні ігри">›</button>
+            </div>
+
+            <div class="empty-state" id="emptyState" hidden>
+                <div class="empty-state__icon" aria-hidden="true">🎮</div>
+                <h3>Нічого не знайдено</h3>
+                <p>Спробуй змінити запит, жанр або платформу.</p>
+                <button type="button" class="btn-primary" id="emptyReset">Скинути фільтри</button>
+            </div>
         </main>
     </div>
 
-    <!-- ================= FOOTER (ПІДВАЛ) ================= -->
-    <footer class="footer-main">
-        <div class="footer-columns">
-            <div class="col">
-                <h4>Про Prosto Games</h4>
-                <p>Просто обрати. Просто грати. Prosto Games.</p>
-                <strong>Prosto Games</strong> — це платформа, яка робить геймінг максимально доступним і приємним для кожного. 
-        Ми прибрали всі складні процедури та довге очікування: тут ви зможете <span>ПРОСТО</span> й миттєво знайти омріяну гру для PC чи консолей, отримати ліцензійний ключ у кілька кліків та одразу поринути у віртуальний світ. Ми зібрали для вас найгарячіші новинки, перевірену класику, вигідні акції та цілодобову підтримку, аби ви не витрачали час на зайві формальності, а <span>ПРОСТО</span> насолоджувалися кожною хвилиною гри!
+    <footer>
+        <div class="footer-cols">
+            <div>
+                <h3>Prosto Games</h3>
+                <p>Просто обрати. Просто грати.</p>
             </div>
-            <div class="col">
-                <h4>Покупцям</h4>
-                <ul>
-                    <li><a href="#">Як активувати ключ</a></li>
-                    <li><a href="#">Гарантія та повернення</a></li>
-                    <li><a href="#">Оплата і доставка</a></li>
-                </ul>
+            <div>
+                <h3>Покупцям</h3>
+                <p><a href="info.html#activation">Як активувати ключ</a></p>
+                <p><a href="info.html#returns">Гарантія та повернення</a></p>
             </div>
-            <div class="col">
-                <h4>Підтримка</h4>
+            <div>
+                <h3>Підтримка</h3>
                 <p>Email: prosto2026@gmail.com</p>
-                <p>Час роботи: 24hrs</p>
+                <p>Режим роботи: 24/7</p>
             </div>
         </div>
-
         <div class="footer-bottom">
             <p>&copy; 2026 Prosto Games. Усі права захищені.</p>
         </div>
     </footer>
 
+    <!-- Кошик -->
+    <div class="overlay" id="overlay" hidden></div>
+
+    <aside class="cart-drawer" id="cartDrawer" aria-labelledby="cartTitle" aria-hidden="true" inert>
+        <div class="cart-drawer__head">
+            <h2 id="cartTitle">Кошик</h2>
+            <button type="button" class="icon-btn" id="cartClose" aria-label="Закрити кошик">✕</button>
+        </div>
+
+        <div class="cart-drawer__body" id="cartItems"></div>
+
+        <div class="cart-drawer__foot">
+            <div class="cart-total">
+                <span>Разом:</span>
+                <strong id="cartTotal">0 грн</strong>
+            </div>
+            <button type="button" class="btn-checkout" id="checkoutBtn">Оформити замовлення</button>
+            <p class="cart-note">Демо-магазин: оплата не списується.</p>
+        </div>
+    </aside>
+
+    <!-- Модальне вікно -->
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+        <div class="modal__box">
+            <button type="button" class="icon-btn modal__close" id="modalClose" aria-label="Закрити">✕</button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <div class="toasts" id="toasts" aria-live="polite"></div>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
